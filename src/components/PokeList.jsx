@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PokeList = ({ pokemonList }) => {
+const PokeList = ({ pokemonList, setSelectedPokemonName }) => {
   return (
     <div style={styles.gridContent}>
-        {pokemonList.map((pokemon, index) => (
-            <div key={index} style={styles.card}>
-            {pokemon.name}
+        {pokemonList.map((item, index) => (
+            <div key={index} style={styles.card} onClick={() => setSelectedPokemonName(item.name)}>
+            {item.name}
             </div>
         ))}
     </div>
